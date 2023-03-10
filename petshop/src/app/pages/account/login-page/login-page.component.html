@@ -4,22 +4,27 @@
       <span class="uk-icon uk-margin-small-right" uk-icon="icon: logo-color-dark; ratio: 0.7"></span>
     </p>
 
-    <form [formGroup]="form">
+    <app-loading *ngIf="busy"></app-loading>
+    
+    <form [formGroup]="form" *ngIf="!busy">
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
         <h3 class="uk-card-title">Autentique-se</h3>
         <div class="uk-margin">
-          <input minlength="5" [ngClass]="{'uk-form-danger' : (!form.controls['username'].valid && !form.controls['username'].pristine)}" class="uk-input uk-form-large" formControlName="username" type="text" placeholder="CPF">
+          <input mask="###.###.###-##"
+            [ngClass]="{'uk-form-danger' : (!form.controls['username'].valid && !form.controls['username'].pristine)}"
+            class="uk-input uk-form-large" formControlName="username" type="text" placeholder="CPF">
         </div>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="password" type="password" placeholder="Senha">
         </div>
         <div class="uk-margin uk-text-right">
-          <!-- <a [routerLink]="['/signup']" [queryParams]="{par: 'valor'}" class="uk-button uk-button-default">Entrar</a> -->
-          <button (click)="submit()" [routerLink]="['/signup']" [disabled]="form.invalid" class="uk-button uk-button-default">Entrar</button>
+          <button (click)="submit()" [disabled]="form.invalid" class="uk-button uk-button-default">Entrar</button>
         </div>
       </div>
     </form>
-    <p>
+
+
+    <p *ngIf="!busy">
       <a href="/signup" class="uk-button uk-width-1-1 uk-button-large uk-button-primary uk-margin-small-bottom ">
         Cadastrar
       </a>

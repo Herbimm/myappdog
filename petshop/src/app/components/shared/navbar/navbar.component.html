@@ -20,12 +20,12 @@
             <li>
               <a [routerLink]="['/account']">
                 <span class="uk-icon uk-margin-small-right" uk-icon="icon: user"></span>
-                
+                {{user?.name}}
               </a>
             </li>
             <li>
               <a >
-                <span class="uk-icon uk-margin-small-right" uk-icon="icon: sign-out"></span>
+                <span (click)="logout()" class="uk-icon uk-margin-small-right" uk-icon="icon: sign-out"></span>
               </a>
             </li>
           </ul>
