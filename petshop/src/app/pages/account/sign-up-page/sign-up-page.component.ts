@@ -28,7 +28,7 @@ export class SignupPageComponent implements OnInit {
         Validators.minLength(14),
         Validators.maxLength(14),
         Validators.required,
-        CustomValidator.isCpf()
+        CustomValidator.isCpf(),
       ])],
       email: ['', Validators.compose([
         Validators.minLength(5),
