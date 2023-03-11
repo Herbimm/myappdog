@@ -13,7 +13,7 @@ import { CustomValidator } from 'src/app/validators/custom.validator';
 export class LoginPageComponent implements OnInit {
   
   public form: FormGroup;
-  public busy!: boolean;
+  public busy!: boolean; 
 
   constructor(private router: Router,private service: DataService, private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -54,7 +54,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   submit() {
-    this.busy = true;    
+    this.busy = true;       
     this.service.authenticate(this.form.value).subscribe((data: any) => { this.setUser(data.customer, data.token) },
       (err) => {
         console.log(err);

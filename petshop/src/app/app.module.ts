@@ -17,7 +17,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { MaskDirective } from "./directives/mask.directive";
 import { AuthService } from "./services/auth.services";
 import { CommonModule } from "@angular/common";
-import { SignupPageComponent } from "./pages/account/sign-up-page/sign-up-page.component";
+import { SignUpPageComponent } from "./pages/account/sign-up-page/sign-up-page.component";
+import { AlertmsgComponent } from './components/shared/alertmsg/alertmsg.component';
 
 
 
@@ -27,7 +28,7 @@ import { SignupPageComponent } from "./pages/account/sign-up-page/sign-up-page.c
     NavbarComponent,
     LoginPageComponent,
     ResetPasswordPageComponent,
-    SignupPageComponent,    
+    SignUpPageComponent,    
     ProductsPageComponent,
     PetsPageComponent,
     CartPageComponent,
@@ -36,7 +37,7 @@ import { SignupPageComponent } from "./pages/account/sign-up-page/sign-up-page.c
     LoadingComponent,    
     LoadingComponent,
     MaskDirective,
-    
+    AlertmsgComponent,   
   ],
   imports: [
     BrowserModule,

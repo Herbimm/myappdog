@@ -3,20 +3,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { CustomValidator } from 'src/app/validators/custom.validator';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup-page',
   templateUrl: './sign-up-page.component.html',
   styleUrls: ['./sign-up-page.component.css']
 })
-export class SignupPageComponent implements OnInit {
+export class SignUpPageComponent implements OnInit {
   public form: FormGroup;
   public busy = false;
+  
 
   constructor(
     private router: Router,
     private service: DataService,
-    private fb: FormBuilder,    
+    private fb: FormBuilder,      
   ) {
     this.form = this.fb.group({
       name: ['', Validators.compose([
@@ -53,9 +55,9 @@ export class SignupPageComponent implements OnInit {
       .service
       .create(this.form.value)
       .subscribe(
-        (data: any) => {
-          this.busy = false;
-          
+        (data: any) => {               
+          Swal.fire('Cadastrado com Sucesso', '', 'success')  
+          this.busy = true;
           this.router.navigate(['/login']);
         },
         (err) => {
