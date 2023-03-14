@@ -30,6 +30,9 @@ export class DataService {
         {headers: this.composeHeaders()});        
     }
 
+    resetPassword(data: any) {
+        return this.http.post(`${this.url}/accounts/reset-password`, data);
+    }
 
     create(data: any){
         return this.http.post(`${this.url}/accounts`, data);
