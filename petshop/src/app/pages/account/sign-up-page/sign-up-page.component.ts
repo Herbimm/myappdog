@@ -12,8 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class SignUpPageComponent implements OnInit {
   public form: FormGroup;
-  public busy = false;
-  
+  public busy = false;  
 
   constructor(
     private router: Router,
