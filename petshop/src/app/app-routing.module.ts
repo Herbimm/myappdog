@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/account/login-page/login-page.component';
 import { PetsPageComponent } from './pages/account/pets-page/pets-page.component';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
 import { SignUpPageComponent } from './pages/account/sign-up-page/sign-up-page.component';
 import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
@@ -23,7 +24,9 @@ const routes: Routes = [
   {
     path: 'account',
     component: FramePageComponent,
-    children: [      
+    canActivate : [AuthService],
+    children: [  
+      { path: '', component: ProfilePageComponent},
       { path: 'pets', component: PetsPageComponent },
     ]
   },

@@ -9,7 +9,7 @@ import { ResetPasswordPageComponent } from "./pages/account/reset-password-page/
 import { FramePageComponent } from "./pages/master/frame-page/frame-page.component";
 import { CartPageComponent } from "./pages/store/cart-page/cart-page.component";
 import { ProductsPageComponent } from "./pages/store/products-page/products-page.component";
-import {HttpClientModule} from "@angular/common/http"
+import { HttpClientModule} from "@angular/common/http"
 import { DataService } from "./services/data.service";
 import { ProductCardComponent } from './components/store/productcard/product-card.component';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -19,6 +19,8 @@ import { AuthService } from "./services/auth.services";
 import { CommonModule } from "@angular/common";
 import { SignUpPageComponent } from "./pages/account/sign-up-page/sign-up-page.component";
 import { AlertmsgComponent } from './components/shared/alertmsg/alertmsg.component';
+import { ProfilePageComponent } from "./pages/account/profile-page/profile-page.component";
+
 
 
 
@@ -37,7 +39,8 @@ import { AlertmsgComponent } from './components/shared/alertmsg/alertmsg.compone
     LoadingComponent,    
     LoadingComponent,
     MaskDirective,
-    AlertmsgComponent,   
+    AlertmsgComponent,
+    ProfilePageComponent,   
   ],
   imports: [
     BrowserModule,

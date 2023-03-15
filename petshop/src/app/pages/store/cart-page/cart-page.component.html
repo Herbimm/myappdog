@@ -1,4 +1,4 @@
-<!-- <div class="uk-container" *ngIf="cart?.items.length > 0">
+<div class="uk-container" *ngIf="cart?.items!.length > 0">
     <nav class="uk-navbar-container" uk-navbar>
       <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
@@ -43,7 +43,7 @@
     </div>
   </div>
   
-  <div class="uk-container" *ngIf="cart?.items.length == 0">
+  <div class="uk-container" *ngIf="cart?.items!.length == 0">
     <br>
     <br>
     <br>
@@ -52,4 +52,4 @@
     <br>
     <br>
   </div>
-   -->
+  
